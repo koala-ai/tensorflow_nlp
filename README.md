@@ -12,7 +12,7 @@ should not be used for the production environment.
 - [text classification](nlp/text_classification/README.md)
 - [text representation](nlp/text_representation/README.md)
 - [text summarization](nlp/textsum/README.md)
-- [relationship extraction](nlp/relation_extract/README.md)
+- [relation extraction](nlp/relation_extract/README.md)
 - [sentiment](nlp/sentiment/README.md)
 - [chatbot](nlp/chatbot/README.md)
 - [poems](nlp/poems/README.md)
@@ -27,5 +27,5 @@ pip install -r requirements.txt
 
 ## License
 
-本文使用的许可见[LICENSE](LICENSE)
+The license is [LICENSE](LICENSE)
 
