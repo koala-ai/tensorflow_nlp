@@ -10,7 +10,7 @@ This task use rnn to generate poems.
 we can use this implement to generate poem:
 
 ```bash
-cd deepnlp/poems
+cd nlp/poems
 
 训练：python run.py \
         --train_dir=path/to/train_dir \
