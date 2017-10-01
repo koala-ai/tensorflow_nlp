@@ -13,6 +13,7 @@ should not be used for the production environment.
 - [text representation](nlp/text_representation/README.md)
 - [textsum](nlp/textsum/README.md)
 - [relation extract](nlp/relation_extract/README.md)
+- [sentiment](nlp/sentiment/README.md)
 - [chatbot](nlp/chatbot/README.md)
 - [poems](nlp/poems/README.md)
 
