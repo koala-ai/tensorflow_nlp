@@ -9,16 +9,16 @@ This task use rnn to generate poems.
 
 we can use this implement to generate poem:
 
-```bash
+```
 cd nlp/poems
 
-训练：python run.py \
+train：python run.py \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --method= rnn or lstm or gru
         --process=train
         
-生成：python run.py \
+generate：python run.py \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --method= rnn or lstm or gru

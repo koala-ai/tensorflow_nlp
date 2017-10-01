@@ -17,12 +17,12 @@ The framework are following:
 ```
 cd nlp/text_representation/word2vec
 
-构建词典：python vocab.py \
+build vocab：python vocab.py \
         --train_dir train \
         --data_file data.txt \
         --min_count=5
 
-训练：python word2vec.py \
+train：python word2vec.py \
         --train_dir train \
         --save_path embedding_path \
         --epochs_to_train 10 \
@@ -38,7 +38,7 @@ you can use the following to run:
 
 ```
 cd nlp/text_representation/glove
-训练：python run.py \
+train：python run.py \
         --data_dir data \
         --log_dir log_dir \
         --result_file result \
@@ -63,7 +63,7 @@ you can use the following to run:
 
 ```
 cd nlp/text_representation/doc2vec
-训练：python run.py \
+train：python run.py \
         --train_dir train \
         --data_file embedding_path \
         --n_steps 10 \

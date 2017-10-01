@@ -7,16 +7,18 @@ We have implemented a 2 network using tensorflow to classify the named entities.
 
 ## Use bilstm recognition
 
+you can use the following to run:
+
 ```
 cd nlp/ner/lstm
 
-训练：python run.py --train_dir=path/to/train_dir \
+train：python run.py --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         ...
         --process=train \
         --model=lstm or bilstm
         
-预测：python run.py --train_dir=path/to/train_dir \
+predict：python run.py --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --predict_file=path/to/predict_file \
         --output_file=path/to/output_file \
@@ -49,17 +51,18 @@ Our model is 4 large Dilated CNN blocks of the same structure, each of which is 
 
 IDCNN generates a logits for each word of the input sentence, which is exactly the same as the biLSTM model output logits, into the CRF Layer, and the Viterbi algorithm to decode the result.
 
+you can use the following to run:
 
 ```
 cd nlp/ner/idcnn
 
-训练：python run.py --train_dir=path/to/train_dir \
+train：python run.py --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         ...
         --process=train \
         --model=lstm or bilstm
         
-预测：python run.py --train_dir=path/to/train_dir \
+predict：python run.py --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --predict_file=path/to/predict_file \
         --output_file=path/to/output_file \
