@@ -2,21 +2,21 @@
 
 import tensorflow as tf
 import argparse
-from nlp.pos.lstm.train import train_pos
-from nlp.pos.lstm.predict import predict_pos
+from nlp.pos.lstm import train
+from nlp.pos.lstm import predict
 
 
 def main(args):
     if args.process == tf.estimator.ModeKeys.TRAIN:
         if args.model == "lstm":
-            train_pos.train_lstm(args)
+            train.train_lstm(args)
         else:
-            train_pos.train_bilstm(args)
+            train.train_bilstm(args)
     elif args.process == tf.estimator.ModeKeys.PREDICT:
         if args.model == "lstm":
-            predict_pos.predict(args)
+            predict.predict(args)
         else:
-            predict_pos.predict(args)
+            predict.predict(args)
     else:
         raise Exception("cannot support this process:" + args.process)
 
