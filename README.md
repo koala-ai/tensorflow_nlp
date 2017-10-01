@@ -1,6 +1,6 @@
-# Deep nature language process toolkit 
+# Deep natural language process toolkit 
 
-This is nature language process toolkit. The toolkit include segment, pos tagging, named entity recognition, text classification,
+This is a natural language process toolkit. The toolkit includes implement of segment, pos tagging, named entity recognition, text classification,
 text representation, textsum, relation extract, chatbot, QA and so on. so far, the implementation is experimental, 
 should not be used for the production environment.
  
