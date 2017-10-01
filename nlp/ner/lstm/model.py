@@ -126,9 +126,9 @@ def run(session, model, dataset, eval_op, ner_train_dir, epoch):
     costs = 0.0
     iters = 0
     step = 0
-    while dataset.hasNext():
+    while dataset.has_next():
         step = step + 1
-        (x, y) = dataset.nextBatch(model.batch_size)
+        (x, y) = dataset.next_batch(model.batch_size)
         fetches = [model.cost, eval_op]
         feed_dict = {}
         feed_dict[model.input_data] = x
