@@ -6,8 +6,8 @@ import argparse
 from nlp.textsum import train
 from nlp.textsum import predict
 
-def main(args):
 
+def main(args):
     if args.process == tf.estimator.ModeKeys.TRAIN:
         train.train(args)
     elif args.process == tf.estimator.ModeKeys.PREDICT:
