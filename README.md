@@ -6,16 +6,17 @@ should not be used for the production environment.
  
 ## Implement
 
-- [segment](nlp/segment/README.md)
-- [pos tagging](nlp/pos/README.md)
+- [chatbot](nlp/chatbot/README.md)
 - [named entity recognition](nlp/ner/README.md)
+- [poems](nlp/poems/README.md)
+- [pos tagging](nlp/pos/README.md)
+- [relation extraction](nlp/relation_extract/README.md)
+- [segment](nlp/segment/README.md)
+- [sentiment](nlp/sentiment/README.md)
 - [text classification](nlp/text_classification/README.md)
 - [text representation](nlp/text_representation/README.md)
 - [text summarization](nlp/textsum/README.md)
-- [relation extraction](nlp/relation_extract/README.md)
-- [sentiment](nlp/sentiment/README.md)
-- [chatbot](nlp/chatbot/README.md)
-- [poems](nlp/poems/README.md)
+
 
 ## Requirement
 
