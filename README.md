@@ -20,7 +20,7 @@ should not be used for the production environment.
 
 ## Requirement
 
-The requirement in file [requirements.txt](requirements.txt), and you can use the following command to install require libs:
+The requirement in file [requirements.txt](requirements.txt), and you can use the following command to install required libs:
  
 ```
 pip install -r requirements.txt
