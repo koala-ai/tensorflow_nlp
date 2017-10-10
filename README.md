@@ -17,6 +17,13 @@ should not be used for the production environment.
 - [text representation](nlp/text_representation/README.md)
 - [text summarization](nlp/textsum/README.md)
 
+## Install
+
+You can use pip to install this toolkit
+
+```
+pip install tensorflow_nlp
+```
 
 ## Requirement
 
