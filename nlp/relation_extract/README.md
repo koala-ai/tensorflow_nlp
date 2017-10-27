@@ -16,14 +16,14 @@ sentence attention come from reference 2
 you can use the following to run:
 
 ```
-cd deepnlp/relation_extract
+bazel build nlp/relation_extract:run
 
-训练：python run.py \
+训练：bazel-bin/nlp/relation_extract/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --process=train
         
-预测：python run.py \
+预测：bazel-bin/nlp/relation_extract/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --predict_file=path/to/predict_file \

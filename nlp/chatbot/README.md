@@ -27,6 +27,8 @@ For example, the length of the question ask is less than or equal to 5, and the 
 *step4:train*
 
 ```
+bazel build nlp/chatbot:run
+
 python run.py \
 --size 1024 \
 --num_layers 2 \

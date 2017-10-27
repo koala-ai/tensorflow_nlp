@@ -10,21 +10,24 @@ We have implemented a 2 network using tensorflow to classify the named entities.
 you can use the following to run:
 
 ```
-cd nlp/ner/lstm
+bazel build nlp/ner/lstm:run
 
-train：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        ...
-        --process=train \
-        --model=lstm or bilstm
+train：bazel-bin/nlp/ner/lstm/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/utils \
+    --model=lstm \
+    --num_epochs=10 \
+    --process=train
         
-predict：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --predict_file=path/to/predict_file \
-        --output_file=path/to/output_file \
-        ...
-        --process=infer \
-        --model=lstm or bilstm
+predict：bazel-bin/nlp/ner/lstm/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/utils \
+    --predict_file=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/data/predict.txt \
+    --result_file=/Users/endy/nlp/tensorflow_nlp/data/ner/lstm/data/output.txt \
+    --model=lstm \
+    --process=infer
 ```
 
 ## Use dicnn crf recognition
@@ -54,21 +57,32 @@ IDCNN generates a logits for each word of the input sentence, which is exactly t
 you can use the following to run:
 
 ```
-cd nlp/ner/idcnn
 
-train：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        ...
-        --process=train \
-        --model=lstm or bilstm
+bazel build nlp/ner/idcnn:run
+
+train：bazel-bin/nlp/ner/idcnn/run \
+    --ckpt_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/ckpt \
+    --log_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/log \
+    --vocab_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/vocab \
+    --config_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/config \
+    --emb_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/vec.txt \
+    --train_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/example.train \
+    --dev_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/example.dev \
+    --test_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/example.test \
+    --model_type=idcnn \
+    --process=train \
+    --max_epoch=10
         
-predict：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --predict_file=path/to/predict_file \
-        --output_file=path/to/output_file \
-        ...
-        --process=infer \
-        --model=lstm or bilstm
+predict：bazel-bin/nlp/ner/idcnn/run \
+    --ckpt_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/ckpt \
+    --log_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/log \
+    --vocab_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/vocab \
+    --config_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/config \
+    --emb_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/vec.txt \
+    --raw_file=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data/example.raw \
+    --result_path=/Users/endy/nlp/tensorflow_nlp/data/ner/idcnn/data \
+    --model_type=idcnn \
+    --process=infer
 ```
 
 ## Reference

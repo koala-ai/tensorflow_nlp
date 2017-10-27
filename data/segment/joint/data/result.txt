@@ -1,0 +1,2 @@
+山_PART 前有_NOUN 个_PART 圆圆_NOUN 脸_PUNCT
+我喜_NOUN 欢吃_NOUN 北_PART 京烤_NOUN 鸭_PUNCT

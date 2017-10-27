@@ -37,8 +37,9 @@ In this task, We implement a specific weighted least squares model that trains o
 you can use the following to run:
 
 ```
-cd nlp/text_representation/glove
-train：python run.py \
+bazel build nlp/text_representation/glove:run
+
+bazel-bin/nlp/text_representation/glove/run \
         --data_dir data \
         --log_dir log_dir \
         --result_file result \
@@ -62,8 +63,9 @@ The framework are following:
 you can use the following to run:
 
 ```
-cd nlp/text_representation/doc2vec
-train：python run.py \
+bazel build nlp/text_representation/doc2vec:run
+
+bazel-bin/nlp/text_representation/doc2vec/run \
         --train_dir train \
         --data_file embedding_path \
         --n_steps 10 \

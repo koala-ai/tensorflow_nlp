@@ -27,6 +27,7 @@ def get_ngrams(raw, gram):
             gram_set.add(ch)
     return gram_set
 
+
 '''
 处理训练集和验证集获得下面的文件：
 1 字符集

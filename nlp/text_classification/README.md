@@ -3,16 +3,16 @@
 ## RNN
 
 ```
-cd nlp/text_classification/rnn_multiclass
+bazel build nlp/text_classification/rnn_multiclass:run
 
-train：python run.py \
+train：bazel-bin/nlp/text_classification/rnn_multiclass/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --model=lstm or gru \
         ...
         --process=train
         
-predict：python run.py \
+predict：bazel-bin/nlp/text_classification/rnn_multiclass/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --predict_file=path/to/predict_file \
@@ -23,14 +23,14 @@ predict：python run.py \
 ## CNN
 
 ```
-cd nlp/text_classification/cnn_multiclass
+bazel build nlp/text_classification/cnn_multiclass:run
 
-train：python run.py \
+train：bazel-bin/nlp/text_classification/cnn_multiclass/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --process=train
         
-predict：python run.py \
+predict：bazel-bin/nlp/text_classification/cnn_multiclass/run \
         --train_dir=path/to/train_dir \
         --data_dir=path/to/data_dir \
         --predict_file=path/to/predict_file \

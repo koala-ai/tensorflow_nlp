@@ -17,13 +17,6 @@ should not be used for the production environment.
 - [text representation](nlp/text_representation/README.md)
 - [text summarization](nlp/textsum/README.md)
 
-## Install
-
-You can use pip to install this toolkit
-
-```
-pip install tensorflow_nlp
-```
 
 ## Requirement
 
@@ -32,6 +25,8 @@ The requirement in file [requirements.txt](requirements.txt), and you can use th
 ```
 pip install -r requirements.txt
 ```
+
+If bazel is not installed on your system, install it now by following these [directions](https://docs.bazel.build/versions/master/install.html).
 
 ## License
 

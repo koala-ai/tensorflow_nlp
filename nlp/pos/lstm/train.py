@@ -6,6 +6,7 @@ from nlp.pos.lstm.dataset import rawdata, dataset
 from nlp.pos.lstm import model as lstm_model
 from nlp.pos.lstm import bilstm_model
 
+
 def train_lstm(args):
     if not args.data_dir:
         raise ValueError("No data files found in 'data_dir' folder")

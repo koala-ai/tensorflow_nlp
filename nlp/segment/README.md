@@ -12,18 +12,23 @@ Based on the characteristics of binary words, the neural network is constructed 
 you can use the following to run:
 
 ```
-cd nlp/segment/joint_bilstm_crf
+bazel build nlp/segment/joint_bilstm_crf:run
 
-train：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        ...
+train：bazel-bin/nlp/segment/joint_bilstm_crf/run \
+        --train_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/ckpt \
+        --data_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/data \
+        --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/utils \
+        --vocab_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/vocab \
+        --num_epochs=10 \
         --process=train
         
-predict：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-            ...
-        --predict_file=path/to/predict_file \
-        --predict_output_file=path/to/predict_output_file \
+predict：bazel-bin/nlp/segment/joint_bilstm_crf/run \
+        --train_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/ckpt \
+        --data_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/data \
+        --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/utils \
+        --vocab_dir=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/vocab \
+        --predict_file=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/data/raw.txt \
+        --result_file=/Users/endy/nlp/tensorflow_nlp/data/segment/joint/data/result.txt \
         --process=infer
 ```
 
@@ -54,21 +59,32 @@ IDCNN generates a logits for each word of the input sentence, which is exactly t
 you can use the following to run:
 
 ```
-cd nlp/segment/joint_bilstm_crf
+bazel build nlp/segment/idcnn:run
 
-train：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        ...
-        --process=train \
-        --model=lstm or bilstm
+train：bazel-bin/nlp/segment/idcnn/run \
+    --ckpt_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/ckpt \
+    --log_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/log \
+    --vocab_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/vocab \
+    --config_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/config \
+    --emb_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/vec.txt \
+    --train_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/example.train \
+    --dev_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/example.dev \
+    --test_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/example.test \
+    --model_type=idcnn \
+    --process=train \
+    --max_epoch=10
         
-predict：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --predict_file=path/to/predict_file \
-        --output_file=path/to/output_file \
-        ...
-        --process=infer \
-        --model=lstm or bilstm
+predict：bazel-bin/nlp/segment/idcnn/run \
+    --ckpt_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/ckpt \
+    --log_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/log \
+    --vocab_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/vocab \
+    --config_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/config \
+    --emb_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/vec.txt \
+    --raw_file=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data/example.raw \
+    --result_path=/Users/endy/nlp/tensorflow_nlp/data/segment/idcnn/data \
+    --model_type=idcnn \
+    --process=infer
+
 ```
 
 # Reference

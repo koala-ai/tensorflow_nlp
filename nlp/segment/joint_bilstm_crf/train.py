@@ -7,6 +7,12 @@ import tensorflow as tf
 
 
 def train(args):
+    if not os.path.isdir(args.vocab_dir):
+        os.makedirs(args.vocab_dir)
+
+    if not os.path.isdir(args.train_dir):
+        os.makedirs(args.train_dir)
+
     train_file = os.path.join(args.data_dir, 'train1.txt')
     dev_file = os.path.join(args.data_dir, 'dev1.txt')
     glove_file = os.path.join(args.utils_dir, 'glove.txt')

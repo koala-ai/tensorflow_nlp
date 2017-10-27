@@ -32,6 +32,7 @@ def evaluate(sess, model, name, data, id_to_tag, logger, result_path):
             logger.info("new best test f1 score:{:>.3f}".format(f1))
         return f1 > best_test_f1
 
+
 # config for the model
 def config_model(args, char_to_id, tag_to_id):
     config = OrderedDict()
@@ -54,9 +55,9 @@ def config_model(args, char_to_id, tag_to_id):
     config["lower"] = args.lower
     return config
 
+
 def train(args):
-    if args.clean:
-        clean_and_make_path(args)
+    make_path(args)
 
     # load data sets
     train_sentences = load_sentences(args.train_file, args.zeros)

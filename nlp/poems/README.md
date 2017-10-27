@@ -10,18 +10,19 @@ This task use rnn to generate poems.
 we can use this implement to generate poem:
 
 ```
-cd nlp/poems
+bazel build nlp/poems:run
 
-train：python run.py \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --method= rnn or lstm or gru
-        --process=train
+train：bazel-bin/nlp/poems/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/poems/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/poems/data \
+    --method=lstm \
+    --epochs=10 \
+    --process=train
         
-generate：python run.py \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --method= rnn or lstm or gru
+generate：bazel-bin/nlp/poems/run \
+		--data_dir=/Users/endy/nlp/tensorflow_nlp/data/poems/data \
+        --train_dir=/Users/endy/nlp/tensorflow_nlp/data/poems/ckpt \
+        --method= lstm \
         --begin_word= begin word of poem \
         --process=generate
 ```

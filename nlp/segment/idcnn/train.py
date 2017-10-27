@@ -58,8 +58,7 @@ def config_model(args, char_to_id, tag_to_id):
 
 
 def train(args):
-    if args.clean:
-        clean_and_make_path(args)
+    make_path(args)
 
     # load data sets
     train_sentences = load_sentences(args.train_file, args.zeros)

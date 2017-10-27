@@ -52,7 +52,7 @@ class Model(object):
         while len(self.buckets_char) > len(self.counts):
             self.counts.append(1)
 
-        self.real_batches = data_transform.get_real_batch(self.counts, self.batch_size)
+        self.real_batches = data_utils.get_real_batch(self.counts, self.batch_size)
 
     def model_graph(self, trained_model, scope, emb_dim, gru, rnn_dim, rnn_num, drop_out=0.5,
                     emb=None, ng_embs=None):

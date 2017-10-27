@@ -8,6 +8,7 @@ from nlp.ner.idcnn.dataset.data_utils import load_word2vec, input_from_line
 
 from nlp.ner.idcnn.utils import get_logger, create_model, load_config
 
+
 def predict(args):
     config = load_config(os.path.join(args.config_path, "config.json"))
     logger = get_logger(os.path.join(args.log_path, "predict.log"))
