@@ -1,41 +1,47 @@
 # Text classification
 
-## RNN
-
-```
-bazel build nlp/text_classification/rnn_multiclass:run
-
-train：bazel-bin/nlp/text_classification/rnn_multiclass/run \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --model=lstm or gru \
-        ...
-        --process=train
-        
-predict：bazel-bin/nlp/text_classification/rnn_multiclass/run \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --predict_file=path/to/predict_file \
-        --output_file=path/to/output_file \
-        ...
-        --process=infer
-```
 ## CNN
 
 ```
 bazel build nlp/text_classification/cnn_multiclass:run
 
 train：bazel-bin/nlp/text_classification/cnn_multiclass/run \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --process=train
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/utils \
+    --num_epochs=10 \
+    --process=train
+
         
 predict：bazel-bin/nlp/text_classification/cnn_multiclass/run \
-        --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        --predict_file=path/to/predict_file \
-        --output_file=path/to/output_file \
-        --process=predict
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/utils \
+    --predict_file=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/raw.txt \
+    --result_file=/Users/endy/nlp/tensorflow_nlp/data/text-classification/cnn/result.txt \
+    --process=infer
+
+```
+## RNN
+
+```
+bazel build nlp/text_classification/rnn_multiclass:run
+
+train：bazel-bin/nlp/text_classification/rnn_muticlass/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/utils \
+    --num_epochs=10 \
+    --process=train
+        
+predict：bazel-bin/nlp/text_classification/rnn_muticlass/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/utils \
+    --predict_file=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/raw.txt \
+    --result_file=/Users/endy/nlp/tensorflow_nlp/data/text-classification/rnn/result.txt \
+    --process=infer
+
 ```
 
 ## Reference

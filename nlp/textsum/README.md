@@ -10,14 +10,16 @@ so that the accuracy of generating the new sequence is improved.
 you can use the following to run:
 
 ```
-cd nlp/textsum
+bazel build nlp/textsum:run
 
-训练：python run.py --train_dir=path/to/train_dir \
-        --data_dir=path/to/data_dir \
-        ...
-        --process=train \
+train：bazel-bin/nlp/textsum/run \
+    --train_dir=/Users/endy/nlp/tensorflow_nlp/data/textsum/ckpt \
+    --data_dir=/Users/endy/nlp/tensorflow_nlp/data/textsum/data \
+    --utils_dir=/Users/endy/nlp/tensorflow_nlp/data/textsum/utils \
+    --num_steps=2 \
+    --process=train
         
-预测：python run.py --train_dir=path/to/train_dir \ 
+predict：python run.py --train_dir=path/to/train_dir \ 
         --data_dir=path/to/data_dir \
         ...
         --predict_file=path/to/predict_file \

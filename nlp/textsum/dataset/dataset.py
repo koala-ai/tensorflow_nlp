@@ -30,7 +30,7 @@ class DataSet(object):
 
         # Get a random batch of encoder and decoder inputs from data,
         # pad them if needed, reverse encoder inputs and add GO to decoder.
-        for _ in xrange(self._config.batch_size):
+        for _ in range(self._config.batch_size):
             encoder_input, decoder_input = random.choice(self._data[bucket_id])
 
             # Encoder inputs are padded and then reversed.
@@ -46,20 +46,20 @@ class DataSet(object):
         batch_encoder_inputs, batch_decoder_inputs, batch_weights = [], [], []
 
         # Batch encoder inputs are just re-indexed encoder_inputs.
-        for length_idx in xrange(encoder_size):
+        for length_idx in range(encoder_size):
             batch_encoder_inputs.append(
                 np.array([encoder_inputs[batch_idx][length_idx]
-                          for batch_idx in xrange(self._config.batch_size)], np.int32))
+                          for batch_idx in range(self._config.batch_size)], np.int32))
 
         # Batch decoder inputs are re-indexed decoder_inputs, we create weights.
-        for length_idx in xrange(decoder_size):
+        for length_idx in range(decoder_size):
             batch_decoder_inputs.append(
                 np.array([decoder_inputs[batch_idx][length_idx]
-                          for batch_idx in xrange(self._config.batch_size)], np.int32))
+                          for batch_idx in range(self._config.batch_size)], np.int32))
 
             # Create target_weights to be 0 for targets that are padding.
             batch_weight = np.ones(self._config.batch_size, np.float32)
-            for batch_idx in xrange(self._config.batch_size):
+            for batch_idx in range(self._config.batch_size):
                 # We set weight to 0 if the corresponding target is a PAD symbol.
                 # The corresponding target is decoder_input shifted by 1 forward.
                 if length_idx < decoder_size - 1:

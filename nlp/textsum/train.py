@@ -37,6 +37,12 @@ def read_data(buckets, source_path, target_path):
 
 
 def train(args, steps_per_checkpoint=10):
+    if not os.path.isdir(args.utils_dir):
+        os.mkdir(args.utils_dir)
+
+    if not os.path.isdir(args.train_dir):
+        os.mkdir(args.train_dir)
+
     # Prepare Headline data.
     print("Preparing Headline data in %s" % args.data_dir)
     src_train, dest_train, src_dev, dest_dev, vocab_size =\
