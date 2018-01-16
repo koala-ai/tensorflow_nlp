@@ -1,10 +1,10 @@
 # Auto text summarization
 
-In this implement we will be based on the Tensorflow Seq2Seq + Attention model, describes how to train a Chinese automatic generation of news headlines model.
+In this implement we will be based on the Tensorflow `Seq2Seq + Attention` model, describes how to train a Chinese automatic generation of news headlines model.
 The model of Automatic Summarization has been a hotspot. Direct extraction of important sentences of the extraction method is relatively simple, such as textrank,
 and generate (re-generate a new sentence) is more complex, the effect is not satisfactory. At present, the more popular Seq2Seq model, proposed by Sutskever et al.,
-Based on the structure of an Encoder-Decoder, the source sentence first Encode into a vector of fixed dimension d, and then generate a Target sentence by a character of the Decoder part.
-After adding the Attention attention distribution mechanism, Decoder can generate the new Target Sequence to get the hidden information vector Hidden State of each character before the Encoder coding phase,
+Based on the structure of an `Encoder-Decoder`, the source sentence first encode into a vector of fixed dimension d, and then generate a Target sentence by a character of the Decoder part.
+After adding the Attention mechanism, `Decoder` can generate the new target sequence to get the hidden information vector hidden state of each character before the `Encoder` coding phase,
 so that the accuracy of generating the new sequence is improved.
 
 you can use the following to run:
