@@ -258,8 +258,6 @@ class Model(object):
 
             return tf.reshape(pred, [-1, self.num_steps, self.num_tags])
 
-    # Project layer for idcnn by crownpku
-    # Delete the hidden layer, and change bias initializer
     def project_layer_idcnn(self, idcnn_outputs, name=None):
         """
         :param lstm_outputs: [batch_size, num_steps, emb_size] 
